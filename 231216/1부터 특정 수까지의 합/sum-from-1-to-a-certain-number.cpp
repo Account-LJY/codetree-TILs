@@ -7,7 +7,7 @@ int aaa(int a) {
     for (int i = 1; i <= finish; i++) {
         sum += i;
     }
-    sum %= 10;
+    sum /= 10;
     return sum;
 }
 int main() {
