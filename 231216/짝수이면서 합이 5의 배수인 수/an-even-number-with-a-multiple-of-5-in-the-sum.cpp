@@ -2,6 +2,9 @@
 using namespace std;
 
 bool aaa(int a) {
+    if (a % 2 != 0) {
+        return false;
+    }
     int sum = 0;
     int k;
     while(true) {
@@ -12,7 +15,7 @@ bool aaa(int a) {
             break;
         }
     }
-    return a % 2 == 0 && sum % 5 == 0;
+    return sum != 0 && sum % 5 == 0;
 }
 
 int main() {
