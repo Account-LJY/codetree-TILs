@@ -35,12 +35,13 @@ bool judge(int a, int b, int c) {  // 2077 4 31  spring???
         } else if (b == 2) {
             if (aaa(a) && c <= 29) {
                 return true;
-            } else if (!aaa(a) && c <= 30) {
+            } else if (!aaa(a) && c <= 28) {
                 return true;
             }
             return false;
         }
     }
+    return false;
 }
 
 void season(int a) {
