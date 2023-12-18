@@ -17,6 +17,8 @@ bool judege(int a, int b) {
         if (a == 4 || a == 6 || a == 9 || a == 11) {
             if (b <= 30) {
                 return true;
+            } else {
+                return false;
             }
         } else {
             if (b <= 28) {
