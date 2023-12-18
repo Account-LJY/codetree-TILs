@@ -38,7 +38,7 @@ bool judge(int a, int b, int c) {  // 2077 4 31  spring???
             } else if (c <= 30 && (!aaa(a))) {
                 return true;
             } else {
-                return true;
+                return false;
             }
         }
     }
