@@ -18,24 +18,24 @@ bool aaa(int a) {
         return false;
     }
 }
-
-bool judge(int a, int b, int c) {
+  
+bool judge(int a, int b, int c) {  // 2077 4 31  spring???
     auto it = find(begin(many), end(many), b);
     if (it != end(many)) {
-        if (b <= 31) {
+        if (c <= 31) {
             return true;
         }
     } else {
-        if (a == 4 || a == 6 || a == 9 || a == 11) {
-            if (b <= 30) {
+        if (b == 4 || b == 6 || b == 9 || b == 11) {
+            if (c <= 30) {
                 return true;
             } else {
                 return false;
             }
         } else {
-            if (b <= 29 && aaa(a)) {
+            if (c <= 29 && aaa(a)) {
                 return true;
-            } else if (b <= 30 && (!aaa(a))) {
+            } else if (c <= 30 && (!aaa(a))) {
                 return true;
             } else {
                 return true;
