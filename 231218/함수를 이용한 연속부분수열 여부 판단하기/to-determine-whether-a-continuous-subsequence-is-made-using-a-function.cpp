@@ -26,6 +26,7 @@ bool judge(vector<int> a, vector<int> b) {
 
 int main() {
     cin >> n1 >> n2;
+    int x;
     for (int i = 0; i < n1; i++) {
         cin >> x;
         A.push_back(x);
@@ -34,7 +35,7 @@ int main() {
         cin >> x;
         B.push_back(x);
     }
-    if (judege(A, B)) {
+    if (judge(A, B)) {
         cout << "Yes";
     } else {
         cout << "No";
