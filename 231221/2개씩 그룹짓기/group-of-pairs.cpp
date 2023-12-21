@@ -16,7 +16,9 @@ int main() {
     int m = 0;
     for (int i = 0; i < n; i++) {
         int sum = arr[i] + arr[2 * n - i - 1];
-        m = max(m, sum);
+        if (sum > m) {
+            m = sum;
+        }
     }
     cout << m;
     return 0;
