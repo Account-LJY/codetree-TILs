@@ -15,7 +15,7 @@ int main() {
     sort(arr, arr + 2 * n);
     int m = 0;
     for (int i = 0; i < n; i++) {
-        int sum = arr[i] + arr[2 * n - i - 1];
+        int sum = arr[i] + arr[2*n - 1 - i];
         if (sum > m) {
             m = sum;
         }
