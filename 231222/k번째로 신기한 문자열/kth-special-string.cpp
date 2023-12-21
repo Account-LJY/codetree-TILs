@@ -8,6 +8,16 @@ using namespace std;
 int n, k;
 string T, x;
 vector<string> arr;
+vector<string> res;
+
+bool aaa(string a, string b) {
+    for (int i = 0; i < b.length(); i++) {
+        if (a[i] != b[i]) {
+            return false;
+        }
+    }
+    return true;
+}
 
 int main() {
     // 여기에 코드를 작성해주세요.
@@ -16,15 +26,12 @@ int main() {
         cin >> x;
         arr.push_back(x);
     }
-    sort(arr.begin(), arr.end());
     for (int i = 0; i < n; i++) {
-        for (int j = 0; j < T.length(); j++) {
-            if (arr[i][j] != T[j]) {
-                arr.erase(arr.begin() + i);
-                break;
-            }
+        if(aaa(arr[i], T)) {
+            res.push_back(arr[i]);
         }
     }
-    cout << arr[k - 1];
+    sort(res.begin(), res.end());
+    cout << res[k - 1];
     return 0;
 }
