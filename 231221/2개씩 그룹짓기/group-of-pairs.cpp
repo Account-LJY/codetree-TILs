@@ -21,6 +21,6 @@ int main() {
             m = sum;
         }
     }
-    cout << max;
+    cout << m;
     return 0;
 }
