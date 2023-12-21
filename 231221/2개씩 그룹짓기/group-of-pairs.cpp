@@ -4,22 +4,26 @@
 using namespace std;
 
 int n;
-int arr[1000];
+
 
 int main() {
     // 여기에 코드를 작성해주세요.
     cin >> n;
-    for (int i = 0; i < 2 * n; i++) {
-        cin >> arr[i];
+    int nums[1000];
+
+    for(int i = 0; i < 2 * n; i++) {
+        cin >> nums[i];
     }
-    sort(arr, arr + 2 * n);
-    int m = 0;
-    for (int i = 0; i < n; i++) {
-        int sum = arr[i] + arr[2*n - 1 - i];
-        if (sum > m) {
-            m = sum;
-        }
+    
+    sort(nums, nums + 2 * n);
+
+    int group_max = 0;
+    for(int i = 0; i < n; i++) {
+        int group_sum = nums[i] + nums[2*n - 1 - i];
+        if(group_sum > group_max)
+            group_max = group_sum;
     }
-    cout << m;
+
+    cout << group_max;
     return 0;
 }
