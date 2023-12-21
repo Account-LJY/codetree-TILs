@@ -13,12 +13,12 @@ int main() {
         cin >> arr[i];
     }
     sort(arr, arr + 2 * n);
-    int max = 0;
+    int m = 0;
     int sum = 0;
     for (int i = 0; i < n; i++) {
         sum = arr[i] + arr[2 * n - i - 1];
-        if (sum > max) {
-            max = sum;
+        if (sum > m) {
+            m = sum;
         }
     }
     cout << max;
