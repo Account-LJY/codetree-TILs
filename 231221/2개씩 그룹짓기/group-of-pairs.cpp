@@ -14,12 +14,9 @@ int main() {
     }
     sort(arr, arr + 2 * n);
     int m = 0;
-    int sum = 0;
     for (int i = 0; i < n; i++) {
-        sum = arr[i] + arr[2 * n - i - 1];
-        if (sum > m) {
-            m = sum;
-        }
+        int sum = arr[i] + arr[2 * n - i - 1];
+        m = max(m, sum);
     }
     cout << m;
     return 0;
