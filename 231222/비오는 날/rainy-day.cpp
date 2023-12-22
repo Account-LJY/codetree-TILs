@@ -31,7 +31,9 @@ int main() {
             vec.push_back(i);
         }
     }
-    
+    if (vec.size() == 0) {
+        return 0;
+    }
     int idx = vec[0];
     for (int i = 1; i < vec.size(); i++) {
         if (info[idx].date > info[vec[i]].date) {
