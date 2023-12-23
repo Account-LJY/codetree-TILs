@@ -5,15 +5,15 @@ using namespace std;
 class Info {
     public:
         int el, idx, lidx;
-        Info(int a, int b, int c) {
+        Info(int a = 0, int b = 0, int c = 0) {
             this -> el = a;
             this -> idx = b;
             this -> lidx = c;
         }
-        Info() {}
+
 };
 
-bool cmp1(Info a, Info b) {
+bool cmp(Info a, Info b) {
     return a.el < b.el;
 }
 
@@ -25,13 +25,13 @@ int main() {
     // 여기에 코드를 작성해주세요.
     int n;
     cin >> n;
-    Info info[1000];
+    Info info[n];
     for (int i = 0; i < n; i++) {
         int a;
         cin >> a;
-        info[i] = Info(a, i + 1, 0);
+        info[i] = Info(a, i + 1);
     }
-    sort(info, info + n, cmp1);
+    sort(info, info + n, cmp);
     for (int i = 0; i < n; i++) {
         info[i].lidx = i + 1;
     }
