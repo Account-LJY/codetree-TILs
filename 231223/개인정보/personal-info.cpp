@@ -1,5 +1,6 @@
 #include <iostream>
 #include <algorithm>
+#include <iomanip>
 
 using namespace std;
 
@@ -38,13 +39,13 @@ int main() {
 
     cout << "name" << endl;
     for (int i = 0; i < 5; i++) {
-        cout << info[i].name << " " << info[i].height << " " << info[i].weight << endl;
+        cout << info[i].name << " " << info[i].height << " " << fixed << setprecision(1) << info[i].weight << endl;
     }
 
     sort(info, info + 5, cmp2);
     cout << "\nheight" << endl;
     for (int i = 0; i < 5; i++) {
-        cout << info[i].name << " " << info[i].height << " " << info[i].weight << endl;
+        cout << info[i].name << " " << info[i].height << " " << fixed << setprecision(1) << info[i].weight << endl;
     }
     return 0; 
 }
