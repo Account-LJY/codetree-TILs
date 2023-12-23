@@ -4,20 +4,18 @@ using namespace std;
 
 class Info {
     public:
-        int el, idx, lidx;
-        Info(int a = 0, int b = 0, int c = 0) {
+        int el, idx;
+        Info(int a = 0, int b = 0) {
             this -> el = a;
             this -> idx = b;
-            this -> lidx = c;
         }
 
 };
 
 bool cmp(Info a, Info b) {
-    return a.el < b.el;
-}
-
-bool cmp2(Info a, Info b) {
+    if (a.el != b.el) {
+        return a.el < b.el;
+    }
     return a.idx < b.idx;
 }
 
@@ -26,18 +24,18 @@ int main() {
     int n;
     cin >> n;
     Info info[n];
+    int answer[1000];
     for (int i = 0; i < n; i++) {
         int a;
         cin >> a;
-        info[i] = Info(a, i + 1);
+        info[i] = Info(a, i);
     }
     sort(info, info + n, cmp);
     for (int i = 0; i < n; i++) {
-        info[i].lidx = i + 1;
+        answer[info[i].idx] = i + 1;
     }
-    sort(info, info + n, cmp2);
     for (int i = 0; i < n; i++) {
-        cout << info[i].lidx << " ";
+        cout << answer[i] << " ";
     }
     return 0;
 }
