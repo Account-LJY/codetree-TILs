@@ -41,6 +41,10 @@ int main() {
     // 여기에 코드를 작성해주세요.
     int a, b, c, d;
     cin >> a >> b >> c >> d; // a/b ~ c/d
+    if (a == c && b == d) {
+        cout << "Mon";
+        return 0;
+    }
     if (num_of_days[a] + b > num_of_days[c] + d) {
         bbb(c, d, a, b);
     } else {
