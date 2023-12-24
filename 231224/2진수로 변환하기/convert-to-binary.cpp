@@ -8,6 +8,10 @@ int main() {
     cin >> n;
     int digits[20];
     int idx = 0;
+    if (n == 0) {
+        cout << 0;
+        return 0;
+    }
     while(true) {
         if (n < 2) {
             digits[idx] = 1;
