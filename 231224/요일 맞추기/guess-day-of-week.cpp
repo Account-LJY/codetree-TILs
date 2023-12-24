@@ -45,10 +45,14 @@ int main() {
         cout << "Mon";
         return 0;
     }
-    if (num_of_days[a] + b > num_of_days[c] + d) {
+    if (a > c) {
         bbb(c, d, a, b);
-    } else {
+    } else if (a < c) {
         aaa(a, b, c, d);
+    } else if (b < d) {
+        aaa(a, b, c, d);
+    } else {
+        bbb(c, d, a, b);
     }
     return 0;
 }
