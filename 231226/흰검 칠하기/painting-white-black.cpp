@@ -19,9 +19,6 @@ int main() {
         cin >> r >> dir;
         if (dir == "R") {
             for (int i = start; i < start + r; i++) {
-                if(i == start && vec[i].second == "black") {
-                    continue;
-                }
                 vec[i].first++;
                 vec[i].second = "black";
             }
@@ -31,9 +28,6 @@ int main() {
             }
         } else {
             for (int i = start - r + 1; i <= start; i++) {
-                if(i == start && vec[i].second == "white") {
-                    continue;
-                }
                 vec[i].first++;
                 vec[i].second = "white";
             }
@@ -43,10 +37,7 @@ int main() {
             }
         }
     }
-    int white = 0;
-    int black = 0;
-    int gray = 0;
-    int cnt = 0;
+    int white = 0, black = 0, gray = 0, cnt = 0;
     string color;
     for (int i = Min; i <= Max; i++) {
         cnt = vec[i].first;
