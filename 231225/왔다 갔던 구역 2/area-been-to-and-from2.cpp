@@ -1,4 +1,5 @@
 #include <iostream>
+#include <vector>
 using namespace std;
 
 int arr[2001];
@@ -14,7 +15,7 @@ int main() {
         string dir;
         cin >> r >> dir;
         if (dir == "R") {
-            for (int i = start; i <= start + r; i++) {
+            for (int i = start; i < start + r; i++) {
                 arr[i]++;
             }
             start += r;
@@ -22,7 +23,7 @@ int main() {
                 Max = start;
             }
         } else {
-            for (int i = start; i >= start - r; i--) {
+            for (int i = start - r; i < start; i++) {
                 arr[i]++;
             }
             start -= r;
@@ -35,15 +36,8 @@ int main() {
     int r = 0;
     int ans = 0;
     for (int i = Min; i <= Max; i++) {
-        if (i == Max) {
-            ans += r;
-        }
-        if(arr[i] >= 2) {
-            r++;
-        }
-        if (arr[i] < 2 && arr[i - 1] >= 2) {
-            ans += (r - 1);
-            r = 0;
+        if (arr[i] >= 2) {
+            ans++;
         }
     }
     cout << ans;
