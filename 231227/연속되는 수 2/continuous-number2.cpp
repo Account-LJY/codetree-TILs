@@ -11,7 +11,7 @@ int main() {
         cin >> arr[i];
     }
     
-    int cnt = 0, Max = -1;
+    int cnt = -2, Max = -1;
     for (int i = 0; i < n; i++) {
         if (i == 0 || arr[i] != arr[i - 1]) {
             if (cnt > Max) {
