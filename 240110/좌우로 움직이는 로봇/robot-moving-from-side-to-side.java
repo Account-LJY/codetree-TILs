@@ -42,28 +42,19 @@ public class Main {
         int meet = 0;
 
         if (timeA <= timeB) {
-            for (int i = 1; i < timeA; i++) {
-                if (A[i] == B[i] && A[i - 1] != B[i - 1]) {
-                    meet++;
-                }
-            }
-            int last = A[timeA - 1];
             for (int i = timeA; i < timeB; i++) {
-                if (last == B[i] && B[i - 1] != B[i]) {
-                    meet++;
-                }
+                A[i] = A[i - 1];
             }
         } else {
-            for (int i = 1; i < timeB; i++) {
-                if (A[i] == B[i] && A[i - 1] != B[i - 1]) {
-                    meet++;
-                }
-            }
-            int last = B[timeB - 1];
             for (int i = timeB; i < timeA; i++) {
-                if (last == A[i] && A[i - 1] != A[i]) {
-                    meet++;
-                }
+                B[i] = B[i - 1];
+            }
+        }
+
+        int timeMax = timeA >= timeB ? timeA : timeB;
+        for (int i = 1; i < timeMax; i++) {
+            if (A[i] == B[i] && A[i - 1] != B[i - 1]) {
+                meet++;
             }
         }
         System.out.println(meet);
