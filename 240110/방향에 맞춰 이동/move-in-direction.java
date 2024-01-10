@@ -18,15 +18,11 @@ public class Main {
             sc.nextLine();
             if (dir.equals(direction[0])) {
                 x += dx[0] * r;
-                y += dy[0] * r;
             } else if (dir.equals(direction[1])) {
                 x += dx[1] * r;
-                y += dy[1] * r;
             } else if (dir.equals(direction[2])) {
-                x += dx[2] * r;
                 y += dy[2] * r;
             } else {
-                x += dx[3] * r;
                 y += dy[3] * r;
             }
         }
