@@ -36,13 +36,17 @@ public class Main {
         for (int i = 0; i < timeB; i++) {
             C[i] = A[i] - B[i];
         }
-
+        
         int change = 0;
         for (int i = 1; i < timeB; i++) {
             if(C[i] > 0 && C[i - 1] <= 0 || C[i] < 0 && C[i - 1] >= 0) {
                 change++;
             }
         }
-        System.out.println(change - 1);
+        if (change == 0) {
+            System.out.println(0);
+        } else {
+            System.out.println(change - 1);    
+        }
     }
 }
