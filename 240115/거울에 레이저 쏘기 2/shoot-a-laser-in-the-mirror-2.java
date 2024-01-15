@@ -24,7 +24,6 @@ public class Main {
 
         while(true) {
             if (inRange(r, c)) {
-                count++;
                 extracted(r, c);
                 r += dx[dirNum];
                 c += dy[dirNum];
@@ -43,13 +42,13 @@ public class Main {
                     dirNum = 1;
                     break;
                 case 1:
-                    dirNum = 2;
+                    dirNum = 0;
                     break;
                 case 2:
                     dirNum = 3;
                     break;
                 case 3:
-                    dirNum = 0;
+                    dirNum = 2;
                     break;
             }
         } else {
@@ -58,16 +57,17 @@ public class Main {
                     dirNum = 3;
                     break;
                 case 1:
-                    dirNum = 0;
+                    dirNum = 2;
                     break;
                 case 2:
                     dirNum = 1;
                     break;
                 case 3:
-                    dirNum = 2;
+                    dirNum = 0;
                     break;
             }
         }
+        count++;
     }
 
     public static void initalize(int x) {
